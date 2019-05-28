@@ -154,7 +154,10 @@ void create_header(Tar *tar, struct stat *st, char *name, char type)
    else
       strcpy(post, name);
    /*prefix may be an empty string*/
-
+   /*make sure directories end with /*/
+   if (type == '5' && post[strlen(post) - 1] != '/')
+      strcat(post, "/");
+   
    strncpy(head->prefix, pre, H_PREFIX);
    /*post will always have something*/
    strncpy(head->name, post, H_NAME);
