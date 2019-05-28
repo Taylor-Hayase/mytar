@@ -199,7 +199,7 @@ void create_header(Tar *tar, struct stat *st, char *name, char type)
    *(head->version) = '0'; /*version is '00'*/
    *(head->version + 1) = '0';
 
-   user = getpwuid(getuid());
+   user = getpwuid(st->st_uid);
    strncpy(head->uname, user->pw_name, 31);/*user name, null terminater*/
    head->uname[H_UNAME - 1] = '\0';
 
