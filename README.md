@@ -1,5 +1,5 @@
 # mytar
-Simple C implementation of tar
+Simple C implementation of tar - written in collaboration with Ryan Premi
 
 Complie with make
 
